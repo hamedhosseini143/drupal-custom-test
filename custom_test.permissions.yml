@@ -1,0 +1,4 @@
+administer custom_test configuration:
+  title: 'Administer custom_test configuration'
+  description: 'Optional description.'
+  restrict access: true

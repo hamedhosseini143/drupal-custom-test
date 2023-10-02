@@ -1,0 +1,15 @@
+custom_test.example:
+  path: '/custom-test/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\custom_test\Controller\CustomTestController::build'
+  requirements:
+    _permission: 'access content'
+
+custom_test.settings_form:
+  path: '/admin/config/system/custom-test'
+  defaults:
+    _title: 'custom test settings'
+    _form: 'Drupal\custom_test\Form\SettingsForm'
+  requirements:
+    _permission: 'administer custom_test configuration'

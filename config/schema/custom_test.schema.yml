@@ -1,0 +1,8 @@
+# Schema for the configuration files of the custom test module.
+custom_test.settings:
+  type: config_object
+  label: 'custom test settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'

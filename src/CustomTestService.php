@@ -7,7 +7,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 /**
  * Service description.
  */
-class CustomTestService {
+class CustomTestService implements CustomTestServiceInterface {
 
   /**
    * The entity type manager.
@@ -26,11 +26,17 @@ class CustomTestService {
     $this->entityTypeManager = $entity_type_manager;
   }
 
-  /**
-   * Method description.
-   */
-  public function doSomething() {
-    // @DCG place your code here.
+  public function CreateUser($data) {
+    $user = $this->entityTypeManager->getStorage('user')->create([
+      'name' => $data['name'],
+      'mail' => $data['mail'],
+      'pass' => $data['pass'],
+      'status' => 1,
+      'init' => $data['mail'],
+      'roles' => ['authenticated'],
+    ]);
+    $user->save();
+    return $user;
   }
 
 }

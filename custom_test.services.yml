@@ -4,3 +4,7 @@ services:
     arguments: ['@messenger']
     tags:
       - { name: event_subscriber }
+
+  custom_test.service:
+    class: Drupal\custom_test\CustomTestService
+    arguments: ['@entity_type.manager']

@@ -7,6 +7,8 @@ namespace Drupal\custom_test;
  */
 interface CustomTestServiceInterface {
 
-  public function CreateUser($data);
+  public function createCustomUser($data): array;
+
+  public function updateUser($id);
 
 }

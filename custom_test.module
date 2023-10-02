@@ -4,3 +4,15 @@
  * @file
  * Primary module hooks for custom test module.
  */
+
+
+// cron job
+//function custom_test_cron() {
+//  $test = Drupal::service('custom_test.service')->createUser([
+//    'name' => 'testuser',
+//    'mail' => 'test@example.com',
+//    'pass' => 'password',
+//  ]);
+//
+//  dump($test);die();
+//}

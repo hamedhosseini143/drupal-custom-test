@@ -12,5 +12,6 @@ interface CustomTestServiceInterface {
 
   public function NodeExist($nid);
 
+  public function createNode($data);
 
 }

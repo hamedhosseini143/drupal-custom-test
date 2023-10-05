@@ -41,4 +41,12 @@ class CustomTestService implements CustomTestServiceInterface {
     }
   }
 
+
+
+  public function createNode($data) {
+    $node = $this->entityTypeManager->getStorage('node')->create($data);
+    $node->save();
+    return $node;
+  }
+
 }

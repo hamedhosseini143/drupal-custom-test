@@ -10,4 +10,7 @@ interface CustomTestServiceInterface {
 
   public function sumNum($a, $b);
 
+  public function NodeExist($nid);
+
+
 }

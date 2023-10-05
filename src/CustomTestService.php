@@ -30,4 +30,15 @@ class CustomTestService implements CustomTestServiceInterface {
     return $a + $b;
   }
 
+
+  public function NodeExist($nid): bool {
+    $node = $this->entityTypeManager->getStorage('node')->load($nid);
+    if ($node) {
+      return TRUE;
+    }
+    else {
+      return FALSE;
+    }
+  }
+
 }

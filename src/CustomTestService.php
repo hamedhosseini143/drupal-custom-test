@@ -30,7 +30,6 @@ class CustomTestService implements CustomTestServiceInterface {
     return $a + $b;
   }
 
-
   public function NodeExist($nid): bool {
     $node = $this->entityTypeManager->getStorage('node')->load($nid);
     if ($node) {
@@ -40,8 +39,6 @@ class CustomTestService implements CustomTestServiceInterface {
       return FALSE;
     }
   }
-
-
 
   public function createNode($data) {
     $node = $this->entityTypeManager->getStorage('node')->create($data);

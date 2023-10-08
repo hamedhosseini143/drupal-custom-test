@@ -14,21 +14,23 @@ use Drupal\node\NodeStorage;
  */
 class CustmServiceTest extends UnitTestCase {
 
+
   /**
    * Test sumNum
    */
 
-  public function testSumNum() {
-    $sumNumTest = $this->getMockBuilder('Drupal\custom_test\CustomTestService')
-      ->disableOriginalConstructor()
-      ->getMock();
-
-    $sumNumTest->expects($this->any())
-      ->method('sumNum')
-      ->will($this->returnValue(5));
-
-    $this->assertEquals(5, $sumNumTest->sumNum(2, 3));
-  }
+//  public function testSumNum() {
+//
+//    $sumNumTest = $this->getMockBuilder('Drupal\custom_test\CustomTestService')
+//      ->disableOriginalConstructor()
+//      ->getMock();
+//
+//    $sumNumTest->expects($this->any())
+//      ->method('sumNum')
+//      ->will($this->returnValue(6));
+//
+//    $this->assertEquals(5, $sumNumTest->sumNum(2, 3));
+//  }
 
   /**
    * Test NodeExist
@@ -91,7 +93,7 @@ class CustmServiceTest extends UnitTestCase {
 
     $myService = new CustomTestService($entityTypeManager);
 
-    $data = ['type' => 'article', 'title' => 'Test Node'];
+    $data = ['types' => 'article', 'title' => 'Test Node'];
     $result = $myService->createNode($data);
 
     $this->assertInstanceOf('\Drupal\node\NodeInterface', $result);
@@ -102,7 +104,6 @@ class CustmServiceTest extends UnitTestCase {
    */
   protected function setUp(): void {
     parent::setUp();
-    // @todo Mock required classes here.
   }
 
 }

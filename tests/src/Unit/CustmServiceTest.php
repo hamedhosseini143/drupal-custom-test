@@ -93,7 +93,7 @@ class CustmServiceTest extends UnitTestCase {
 
     $myService = new CustomTestService($entityTypeManager);
 
-    $data = ['types' => 'article', 'title' => 'Test Node'];
+    $data = ['type' => 'article', 'title' => 'Test Node'];
     $result = $myService->createNode($data);
 
     $this->assertInstanceOf('\Drupal\node\NodeInterface', $result);

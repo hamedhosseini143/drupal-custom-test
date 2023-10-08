@@ -40,7 +40,7 @@ class CustomTestService implements CustomTestServiceInterface {
     }
   }
 
-  public function createNode($data) {
+  public function createNode($data): bool|\Drupal\Core\Entity\EntityInterface {
     if (!isset($data['type'])) {
      return  FALSE;
     }

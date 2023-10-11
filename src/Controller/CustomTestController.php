@@ -67,10 +67,7 @@ class CustomTestController extends ControllerBase {
    */
   public function build() {
     $nid = $this->getNodeId();
-
     $nodeExists = $this->service->NodeExist($nid);
-
-
     $build['content'] = [
       '#type' => 'item',
       '#markup' => $this->t('Node with id @nid exists: @nodeExists', [

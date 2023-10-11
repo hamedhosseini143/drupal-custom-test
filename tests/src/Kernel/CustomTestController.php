@@ -9,7 +9,7 @@ use Drupal\KernelTests\KernelTestBase;
  *
  * @group custom_test
  */
-class CustomServiceKbtTest extends KernelTestBase {
+class CustomTestController extends KernelTestBase {
 
   /**
    * {@inheritdoc}
@@ -25,10 +25,11 @@ class CustomServiceKbtTest extends KernelTestBase {
   }
 
   /**
-   * Test node existence.
+   * Test callback.
    */
-  public function testNodeExist() {
-    $this->assertTrue(TRUE);
+  public function testSomething() {
+    $result = $this->container->get('transliteration')->transliterate('Друпал');
+    self::assertSame('Drupal', $result);
   }
 
 }

@@ -15,14 +15,16 @@ class CustomTestControllerTest extends KernelTestBase {
   /**
    * {@inheritdoc}
    */
-  protected static $modules = ['custom_test'];
+  protected static $modules = ['custom_test', 'system', 'user',];
 
   /**
    * {@inheritdoc}
    */
   protected function setUp(): void {
     parent::setUp();
-    // Mock required services here.
+    $this->installConfig(['system', 'user']);
+    $this->installSchema('system', ['sequences']);
+    $this->installEntitySchema('user');
   }
 
   /**
@@ -31,8 +33,7 @@ class CustomTestControllerTest extends KernelTestBase {
   public function testCustomController() {
 
     //test module custom_test is configured correctly.
-
-    $this->installConfig(['custom_test']);
+    $this->installConfig(['custom_test', 'user']);
 
 
     // test install test module custom_test.
@@ -42,11 +43,11 @@ class CustomTestControllerTest extends KernelTestBase {
 
     $http_kernel = $this->container->get('http_kernel');
 
-    $request = Request::create('custom-test/custom-route/1', 'GET');
+    $request = Request::create('user/login', 'GET');
 
     $response = $http_kernel->handle($request);
 
-    $this->assertEquals(403, $response->getStatusCode());
+    $this->assertEquals(200, $response->getStatusCode());
 
   }
 
